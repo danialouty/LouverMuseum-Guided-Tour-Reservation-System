@@ -1,7 +1,22 @@
 
 <?php
-// Add your PHP registration code here.
-// The form sends its data using POST.
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+$_username = $_POST["username"];
+$email = $_POST["email"];
+$password = $_POST["password"];
+$confirmpassword = $_POST["confirm_password"];
+
+htmlspecialchars()
+
+
+}
+else{
+
+ header("location: ../signup.php");
+ die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,20 +43,14 @@
         <form action="signup.php" method="POST">
 
             <div class="form-group">
-                <label for="first_name">First Name</label>
-                <input type="text" id="first_name"
-                       name="first_name"
+                <label for="username"> Name</label>
+                <input type="text" id="username"
+                       name="username"
                        placeholder="Enter your first name"
                        required>
             </div>
 
-            <div class="form-group">
-                <label for="last_name">Last Name</label>
-                <input type="text" id="last_name"
-                       name="last_name"
-                       placeholder="Enter your last name"
-                       required>
-            </div>
+            
 
             <div class="form-group">
                 <label for="email">Email Address</label>
@@ -51,13 +60,6 @@
                        required>
             </div>
 
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone"
-                       name="phone"
-                       placeholder="Enter your phone number"
-                       required>
-            </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
