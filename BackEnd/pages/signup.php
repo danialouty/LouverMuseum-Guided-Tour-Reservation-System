@@ -19,11 +19,11 @@ if (isset($_POST['submit'])) {
     }
     else{
 
-    $conn->query("INSERT INTO users ( name ,email , password ,confirmpassword) VALUES ('$username','$email','$password','$$confirmpassword')");
+    $conn->query("INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')");
     }
 
     // Redirect after successful registration
-    header("Location: login.php");
+    header("Location: signup.php");
     exit();
 }
 ?>
@@ -105,4 +105,3 @@ if (isset($_POST['submit'])) {
 
 </body>
 </html>
-
