@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     }
     else{
 
-    $conn->query("INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')");
+    $conn->query("INSERT INTO users ( username ,email , password ) VALUES ('$username','$email','$password')");
     }
 
     // Redirect after successful registration
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Museum Tours</title>
-
+     <link rel="stylesheet" href="../../frontend/signup.css">
     
 </head>
 
