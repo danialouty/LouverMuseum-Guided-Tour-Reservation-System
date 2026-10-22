@@ -1,21 +1,30 @@
-
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+session_start();
+require_once '../../config.php';
 
-$_username = $_POST["username"];
-$email = $_POST["email"];
-$password = $_POST["password"];
-$confirmpassword = $_POST["confirm_password"];
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $confirmpassword = $_POST['confirm_password'];
 
-htmlspecialchars()
 
 
-}
-else{
+    $checkEmail = $conn->query("SELECT email FROM users WHERE email = '$email'");
+    if ($checkEmail->num_rows > 0) {
+        $_SESSION['submit_error']='Email is already used';
+        $_SESSION['active_form']='submit';
 
- header("location: ../signup.php");
- die();
+    }
+    else{
+
+    $conn->query("INSERT INTO users ( name ,email , password ,confirmpassword) VALUES ('$username','$email','$password','$$confirmpassword')");
+    }
+
+    // Redirect after successful registration
+    header("Location: login.php");
+    exit();
 }
 ?>
 
@@ -81,7 +90,7 @@ else{
                        required>
             </div>
 
-            <button type="submit" name="signup">
+            <button type="submit" name="submit">
                 Create Account
             </button>
 
