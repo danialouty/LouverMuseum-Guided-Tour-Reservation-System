@@ -1,5 +1,3 @@
-
-
 <?php
 
 if (isset($_POST["submit"])) {
@@ -16,6 +14,17 @@ if ($result->num_rows > 0) {
     $_SESSION["username"] = $user["username"];
     $_SESSION["email"] = $user["email"];
     
+    if($user['role'] === 'admin') {
+        header(" location: admin_page.php ");
+
+    }
+    else{
+        header(" location: user_page.php ");
+
+    }
+
+    exit();
+ 
 
 }
 }
