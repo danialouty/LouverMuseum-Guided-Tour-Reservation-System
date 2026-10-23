@@ -15,11 +15,11 @@ if ($result->num_rows > 0) {
     $_SESSION["email"] = $user["email"];
     
     if($user['role'] === 'admin') {
-        header(" location: admin_page.php ");
+        header(" Location: admin_page.php ");
 
     }
     else{
-        header(" location: user_page.php ");
+        header(" Location: user_page.php ");
 
     }
 
@@ -28,6 +28,11 @@ if ($result->num_rows > 0) {
 
 }
 }
+    $_SERVER['login_error'] = 'incorrect email or password';
+    $_SERVER['active_from'] = 'login';
+    header("Location : signup.php");
+
+
 }
 ?>
 
