@@ -1,10 +1,37 @@
+
+
+<?php
+
+if (isset($_POST["submit"])) {
+//grabbing the data
+$username = $_POST["username"];
+$password = $_POST["password"];
+$email = $_POST["email"];
+
+$result =$conn->query("SELECT * FROM users WHERE email = '$email'");
+
+if ($result->num_rows > 0) {
+ $user = $result->fetch_assoc();
+ if(password_verify($password, $user["password"])) {
+    $_SESSION["username"] = $user["username"];
+    $_SESSION["email"] = $user["email"];
+    
+
+}
+}
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    
+    <link rel="stylesheet" href="../../frontend/login.css">
+
 </head>
 <body>
 
@@ -33,18 +60,6 @@
 </body>
 </html>
 
-
-<?php
-
-
-
-if (isset($_POST["submit"])) {
-//grabbing the data
-$username = $_POST["username"];
-$password = $_POST["password"];
-$email = $_POST["email"];
-
-}
 
 
 
