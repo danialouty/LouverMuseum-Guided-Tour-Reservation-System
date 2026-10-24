@@ -1,12 +1,15 @@
 <?php
 
+session_start();
+require_once '../../config.php';
+
 if (isset($_POST["submit"])) {
 //grabbing the data
-$username = $_POST["username"];
 $password = $_POST["password"];
 $email = $_POST["email"];
+$role = $_POST["role"];
 
-$result =$conn->query("SELECT * FROM users WHERE email = '$email'");
+$result =$conn->query("SELECT * FROM users WHERE email = '$email' AND role = '$role'");
 
 if ($result->num_rows > 0) {
  $user = $result->fetch_assoc();
@@ -43,37 +46,50 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Log In | Museum Tours</title>
     <link rel="stylesheet" href="../../frontend/login.css">
 
 </head>
 <body>
 
     <div class="login-container">
-        <h2>Account Login</h2>
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+            Log in to manage your museum tour reservations.
+        </p>
+
         <form action="login.php" method="POST">
             
             <div class="form-group">
-                <label for="username">Username or Email</label>
-                <input type="text" id="username" name="username" required placeholder="Enter username or email">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter password">
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
             </div>
 
-            <button type="submit" name="submit" class="btn-submit">Log In</button>
-
-            <div class="form-footer">
-                <p>Don't have an account? <a href="#">Sign up</a></p>
+            <div class="form-group">
+                <label for="role">Log in as</label>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="user">Visitor</option>
+                    <option value="admin">Administrator</option>
+                </select>
             </div>
+
+            <button type="submit" name="submit">Log In</button>
         </form>
+
+        <p class="signup-link">
+            Don't have an account?
+            <a href="signup.php">Sign up</a>
+        </p>
     </div>
 
 </body>
 </html>
-
-
 
 
