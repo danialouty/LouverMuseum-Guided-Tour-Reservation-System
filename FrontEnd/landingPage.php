@@ -73,17 +73,17 @@
             </div>
             <div class="collection-grid">
                 <article class="collection-card card-ancient">
-                    <img class="card-image" src="808x539_cmsv2_950880d4-2c99-5dcc-90eb-0977f3cc2c2e-9578563.avif" alt="Ornate Louvre gallery ceiling">
+                    <img class="card-image" src="images/808x539_cmsv2_950880d4-2c99-5dcc-90eb-0977f3cc2c2e-9578563.avif" alt="Ornate Louvre gallery ceiling">
                     <span class="card-index">01</span>
                     <div class="card-content"><p>Architecture · 90 min</p><h3>The grand<br>galleries</h3><a href="../BackEnd/pages/signup.php">Book a tour <span>→</span></a></div>
                 </article>
                 <article class="collection-card card-modern">
-                    <img class="card-image" src="images.jpg" alt="Visitors attending a guided museum tour">
+                    <img class="card-image" src="images/images.jpg" alt="Visitors attending a guided museum tour">
                     <span class="card-index">02</span>
                     <div class="card-content"><p>Guided visit · 75 min</p><h3>Stories behind<br>the art</h3><a href="../BackEnd/pages/signup.php">Book a tour <span>→</span></a></div>
                 </article>
                 <article class="collection-card card-royal">
-                    <img class="card-image" src="20240810100953494.jpg" alt="Louvre palace and courtyard in Paris">
+                    <img class="card-image" src="images/20240810100953494.jpg" alt="Louvre palace and courtyard in Paris">
                     <span class="card-index">03</span>
                     <div class="card-content"><p>Paris · 60 min</p><h3>The palace<br>in focus</h3><a href="../BackEnd/pages/signup.php">Book a tour <span>→</span></a></div>
                 </article>
@@ -104,7 +104,7 @@
 
         <section class="palace-section">
             <div class="palace-image">
-                <img src="last3.jpg" alt="The Louvre palace and courtyard in Paris">
+                <img src="images/last3.jpg" alt="The Louvre palace and courtyard in Paris">
             </div>
             <div class="palace-copy">
                 <p class="eyebrow">The palace · Paris</p>

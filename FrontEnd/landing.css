@@ -30,7 +30,7 @@ body {
 main {
     background:
         linear-gradient(rgba(233, 240, 244, .78), rgba(233, 240, 244, .78)),
-        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover fixed;
+        url("images/Cour_Napoléon_at_night_-_Louvre.jpg") center / cover fixed;
     padding-bottom: 0;
 }
 
@@ -166,7 +166,7 @@ a {
     background:
         linear-gradient(90deg, rgba(13, 34, 53, .9) 0%, rgba(13, 34, 53, .63) 43%, rgba(13, 34, 53, .12) 100%),
         linear-gradient(0deg, rgba(13, 34, 53, .55), transparent 50%),
-        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover no-repeat;
+        url("images/Cour_Napoléon_at_night_-_Louvre.jpg") center / cover no-repeat;
 }
 
 .hero::before {
@@ -498,7 +498,7 @@ h2 {
     border-top: 1px solid var(--gold);
     background:
         linear-gradient(rgba(16, 42, 67, .97), rgba(16, 42, 67, .97)),
-        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover;
+        url("images/Cour_Napoléon_at_night_-_Louvre.jpg") center / cover;
     color: #c5d3dc;
     font-family: Georgia, serif;
     font-size: 10px;
