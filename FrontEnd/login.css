@@ -1,97 +1,201 @@
-        * {
-            box-sizing: border-box;
-        }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500&display=swap');
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f1e9;
-            color: #352b20;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-        }
+:root {
+    --ink: #172534;
+    --muted: #68798a;
+    --paper: #e9dfcf;
+    --gold: #c29a58;
+    --burgundy: #4e2025;
+    --navy: #102a43;
+    --line: #c7b99f;
+}
 
-        .login-container {
-            background: white;
-            width: 100%;
-            max-width: 460px;
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .login-container h1 {
-            text-align: center;
-            margin: 0 0 10px;
-        }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 20px;
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+    background:
+        linear-gradient(rgba(13, 34, 53, .84), rgba(13, 34, 53, .84)),
+        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover fixed;
+}
 
-        .subtitle {
-            text-align: center;
-            color: #777;
-            margin: 0 0 28px;
-            line-height: 1.5;
-        }
+.login-container {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    padding: 38px;
+    overflow: hidden;
+    border: 10px solid rgba(218, 197, 164, .35);
+    border-radius: 2px;
+    background: #e9dfcf;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    box-shadow:
+        0 18px 50px rgba(7, 22, 36, .38),
+        inset 0 0 0 7px rgba(164, 122, 63, .16);
+}
 
-        .form-group {
-            margin-bottom: 17px;
-        }
+.login-container::before {
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(164, 122, 63, .55);
+    content: "";
+    pointer-events: none;
+}
 
-        label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+.login-brand,
+.login-container h1,
+.login-container .subtitle,
+.login-container form,
+.login-container .signup-link {
+    position: relative;
+    z-index: 1;
+}
 
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d8d1c6;
-            border-radius: 8px;
-            font-size: 15px;
-            background: white;
-            color: #352b20;
-        }
+.login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 28px;
+    color: var(--navy);
+    font-family: Georgia, serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
 
-        input:focus,
-        select:focus {
-            outline: none;
-            border-color: #795c3a;
-        }
+.login-brand em {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: normal;
+}
 
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #795c3a;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.login-brand-mark {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--burgundy);
+    font-size: 20px;
+}
 
-        button:hover {
-            background: #60472d;
-        }
+.login-container h1 {
+    margin: 0 0 10px;
+    color: var(--burgundy);
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+    text-align: center;
+}
 
-        .signup-link {
-            text-align: center;
-            margin: 20px 0 0;
-            font-size: 14px;
-        }
+.subtitle {
+    max-width: 320px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
 
-        .signup-link a {
-            color: #795c3a;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.form-group {
+    margin-bottom: 17px;
+}
 
-        .signup-link a:hover {
-            text-decoration: underline;
-        }
-    
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 13px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    outline: none;
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+    background: rgba(246, 239, 225, .78);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+input::placeholder {
+    color: #8a9298;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(194, 154, 88, .16);
+}
+
+button {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 6px;
+    border: 1px solid #d6ae6b;
+    border-radius: 2px;
+    color: #fffaf2;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    cursor: pointer;
+    background: var(--burgundy);
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+button:hover {
+    background: #702c34;
+    transform: translateY(-1px);
+}
+
+.signup-link {
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.signup-link a {
+    color: var(--burgundy);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    color: #702c34;
+    text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    .login-container {
+        padding: 32px 25px;
+    }
+
+    .login-container h1 {
+        font-size: 30px;
+    }
+}

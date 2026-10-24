@@ -13,31 +13,30 @@ $result =$conn->query("SELECT * FROM users WHERE email = '$email' AND role = '$r
 
 if ($result->num_rows > 0) {
  $user = $result->fetch_assoc();
- if(password_verify($password, $user["password"])) {
+ if(password_verify($password, $user["password"]) && ($user["is_active"] ?? 1)) {
     $_SESSION["username"] = $user["username"];
     $_SESSION["email"] = $user["email"];
-    
-    if($user['role'] === 'admin') {
-        header(" Location: admin_page.php ");
+    $_SESSION["role"] = $user["role"];
 
-    }
-    else{
-        header(" Location: user_page.php ");
 
+    if ($user['role'] === 'admin') {
+    header('Location: ../../FrontEnd/admin_page.php');
+    } else {
+    header('Location: ../../FrontEnd/landingPage.php');
     }
 
     exit();
- 
 
-}
-}
+
+    }
+    }
     $_SERVER['login_error'] = 'incorrect email or password';
     $_SERVER['active_from'] = 'login';
-    header("Location : signup.php");
+    header("Location: signup.php");
 
 
-}
-?>
+    }
+    ?>
 
 
 
@@ -46,17 +45,21 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In | Museum Tours</title>
-    <link rel="stylesheet" href="../../frontend/login.css">
+    <title>Log In | Louvre Museum</title>
+    <link rel="stylesheet" href="../../frontend/login.css?v=6">
 
 </head>
 <body>
 
     <div class="login-container">
+        <a class="login-brand" href="../../FrontEnd/landingPage.php">
+            <span class="login-brand-mark">M</span>
+            <span>LOUVRE <em>PARIS</em></span>
+        </a>
         <h1>Welcome Back</h1>
 
         <p class="subtitle">
-            Log in to manage your museum tour reservations.
+            Log in to manage your Louvre tour reservations.
         </p>
 
         <form action="login.php" method="POST">
@@ -91,5 +94,3 @@ if ($result->num_rows > 0) {
 
 </body>
 </html>
-
-

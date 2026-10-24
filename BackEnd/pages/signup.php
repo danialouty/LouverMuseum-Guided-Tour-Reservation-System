@@ -33,8 +33,8 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | Museum Tours</title>
-     <link rel="stylesheet" href="../../frontend/signup.css">
+    <title>Sign Up | Louvre Museum</title>
+     <link rel="stylesheet" href="../../frontend/signup.css?v=2">
     
 </head>
 
@@ -42,11 +42,16 @@ if (isset($_POST['submit'])) {
 
     <div class="signup-container">
 
-        <h1>Join Our Museum</h1>
+        <a class="signup-brand" href="../../FrontEnd/landingPage.php">
+            <span class="signup-brand-mark">M</span>
+            <span>LOUVRE <em>PARIS</em></span>
+        </a>
+
+        <h1>Join the Louvre</h1>
 
         <p class="subtitle">
             Create an account to reserve your
-            favorite guided museum tours.
+            favorite Louvre guided tours.
         </p>
 
         <form action="signup.php" method="POST">

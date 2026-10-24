@@ -1,0 +1,698 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+:root {
+    --ink: #172534;
+    --muted: #697785;
+    --cream: #e9f0f4;
+    --paper: #f6f9fa;
+    --gold: #c29a58;
+    --burgundy: #4e2025;
+    --dark: #0d2235;
+    --navy: #102a43;
+    --line: #c2d0d9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+main {
+    background:
+        linear-gradient(rgba(233, 240, 244, .78), rgba(233, 240, 244, .78)),
+        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover fixed;
+    padding-bottom: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header,
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px max(5%, 34px);
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    max-width: none;
+    border-bottom: 1px solid rgba(194, 154, 88, .6);
+    background: var(--navy);
+    color: #f6f9fa;
+    transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.site-header.is-scrolled {
+    border-bottom-color: rgba(194, 154, 88, .35);
+    background: rgba(16, 42, 67, .78);
+    box-shadow: 0 8px 22px rgba(7, 22, 36, .18);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.site-header::after {
+    position: absolute;
+    right: max(5%, 34px);
+    bottom: -4px;
+    left: max(5%, 34px);
+    height: 1px;
+    background: var(--gold);
+    content: "";
+    opacity: .75;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-mark {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: #e2bd78;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.brand-name {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.brand-name em {
+    color: #e2bd78;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+    color: #c5d3dc;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+.main-nav a:hover,
+.main-nav a.active,
+.login-link {
+    color: #e5be77;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 9px 0;
+}
+
+.main-nav a.active::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--gold);
+    content: "";
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.outline-button {
+    padding: 11px 17px;
+    border: 1px solid var(--gold);
+    color: #e5be77;
+}
+
+.outline-button:hover {
+    background: #e5be77;
+    color: var(--navy);
+}
+
+/* The image is deliberately the complete hero background. */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 81px);
+    padding: 110px 7%;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(13, 34, 53, .9) 0%, rgba(13, 34, 53, .63) 43%, rgba(13, 34, 53, .12) 100%),
+        linear-gradient(0deg, rgba(13, 34, 53, .55), transparent 50%),
+        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover no-repeat;
+}
+
+.hero::before {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(225, 186, 113, .75);
+    content: "";
+    pointer-events: none;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 670px;
+    color: #fffaf2;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 18px 0 22px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(50px, 7vw, 88px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: .98;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, .45);
+}
+
+.hero h1 span,
+h2 em {
+    color: #e1bd7c;
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 500px;
+    color: rgba(255, 250, 242, .9);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 31px;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 15px 18px;
+    border: 1px solid #d6ae6b;
+    background: var(--burgundy);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.primary-button:hover {
+    background: #702c34;
+}
+
+.primary-button span,
+.text-button span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.text-button {
+    color: #f0d39c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 54px;
+    color: rgba(255, 250, 242, .78);
+    font-size: 10px;
+}
+
+.note-line {
+    width: 35px;
+    height: 1px;
+    background: #d5ae6e;
+}
+
+h2 {
+    margin: 14px 0 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(35px, 4vw, 52px);
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+}
+
+.intro-section,
+.collection-section,
+.palace-section {
+    max-width: 1160px;
+    margin: auto;
+    padding: 100px 5%;
+}
+
+.intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15%;
+    border-top: 1px solid var(--line);
+    background: rgba(246, 249, 250, .54);
+}
+
+.intro-copy {
+    align-self: end;
+    max-width: 410px;
+}
+
+.intro-copy p,
+.palace-copy p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.underlined-link {
+    display: inline-flex;
+    gap: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.collection-section {
+    padding-top: 35px;
+}
+
+.section-topline {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.collection-card {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    padding: 21px;
+    border: 5px solid #9c7946;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px #ead1a0;
+}
+
+.collection-card::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(41, 20, 17, .78), transparent 68%);
+    content: "";
+}
+
+.card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    filter: saturate(.86) contrast(1.04);
+    transition: transform .5s ease, filter .5s ease;
+}
+
+.collection-card:hover .card-image {
+    transform: scale(1.06);
+    filter: saturate(1) contrast(1.08);
+}
+
+.card-index,
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-index {
+    font-family: Georgia, serif;
+}
+
+.card-content {
+    position: absolute;
+    right: 21px;
+    bottom: 21px;
+    left: 21px;
+}
+
+.card-content p {
+    margin: 0 0 9px;
+    color: #ead9c2;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-content h3 {
+    margin: 0 0 19px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.card-content a {
+    display: inline-flex;
+    gap: 18px;
+    border-bottom: 1px solid #ead9c2;
+    padding-bottom: 6px;
+    font-size: 11px;
+}
+
+.visit-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: 64px auto 0;
+    padding: 70px 5%;
+    border: 1px solid #9b7540;
+    background: var(--navy);
+    box-shadow: inset 0 0 0 7px rgba(164, 122, 63, .35);
+    color: #fffaf4;
+}
+
+.visit-section .eyebrow {
+    color: #dcbf88;
+}
+
+.visit-card {
+    min-width: 270px;
+    padding: 25px;
+    border: 1px solid #d0aa6a;
+    background: #e1bd7c;
+    color: var(--navy);
+    box-shadow: 0 10px 24px rgba(7, 22, 36, .18);
+}
+
+.visit-card p {
+    margin: 0 0 16px;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    color: var(--navy);
+}
+
+.visit-card .primary-button {
+    width: 100%;
+    min-height: 62px;
+    border: 1px solid #d6ae6b;
+    background: var(--burgundy);
+    color: #fffaf2;
+    box-shadow: none;
+}
+
+.visit-card .primary-button:hover {
+    background: #702c34;
+}
+
+.visit-card small {
+    display: block;
+    margin-top: 13px;
+    color: #68798a;
+    font-size: 10px;
+}
+
+.palace-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 8%;
+    align-items: center;
+    max-width: 1160px;
+    margin: 82px auto 0 !important;
+    padding: 52px 5%;
+    border: 1px solid var(--gold);
+    background: rgba(246, 249, 250, .96);
+    box-shadow: 0 16px 35px rgba(23, 37, 52, .08);
+}
+
+.palace-image {
+    position: relative;
+    padding: 13px;
+    border: 1px solid var(--gold);
+    background: #f6f9fa;
+    box-shadow: 0 8px 24px rgba(23, 37, 52, .14);
+}
+
+.palace-image img {
+    display: block;
+    width: 100%;
+    height: 365px;
+    object-fit: cover;
+    object-position: center center;
+    filter: brightness(1.08) contrast(1.12) saturate(1.08);
+    image-rendering: auto;
+}
+
+.site-footer {
+    display: block;
+    max-width: none;
+    margin-top: 0 !important;
+    padding: 58px max(7%, 34px) 24px;
+    border-top: 1px solid var(--gold);
+    background:
+        linear-gradient(rgba(16, 42, 67, .97), rgba(16, 42, 67, .97)),
+        url("Cour_Napoléon_at_night_-_Louvre.jpg") center / cover;
+    color: #c5d3dc;
+    font-family: Georgia, serif;
+    font-size: 10px;
+}
+
+.footer-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: auto;
+    padding-bottom: 42px;
+}
+
+.footer-brand {
+    color: #f6f9fa;
+}
+
+.footer-motto {
+    margin: 0;
+    color: #f6f9fa;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+    line-height: 1.05;
+    text-align: right;
+}
+
+.footer-motto em {
+    color: #d5ab68;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 710px;
+    margin: 0 0 45px auto;
+    padding: 28px 0;
+    border-top: 1px solid rgba(194, 154, 88, .4);
+    border-bottom: 1px solid rgba(194, 154, 88, .4);
+}
+
+.footer-links div {
+    display: grid;
+    align-content: start;
+    gap: 9px;
+}
+
+.footer-heading {
+    margin: 0 0 8px;
+    color: #e2bd78;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-links a,
+.footer-links span {
+    color: #c5d3dc;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: #f3d18d;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: auto;
+    color: #9eafbb;
+    font-size: 10px;
+    letter-spacing: .3px;
+}
+
+@media (max-width: 850px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .intro-section {
+        gap: 8%;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header,
+    .site-footer {
+        padding: 18px 5%;
+    }
+
+    .main-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        white-space: nowrap;
+    }
+
+    .hero {
+        min-height: calc(100vh - 132px);
+        padding: 80px 26px;
+        background-position: 62% center;
+    }
+
+    .hero::before {
+        inset: 10px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .intro-section,
+    .collection-section,
+    .palace-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .palace-section {
+        margin: 55px 5% 0 !important;
+        padding: 38px 6%;
+    }
+
+    .section-topline {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-card {
+        min-height: 300px;
+    }
+
+    .visit-section {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 35px;
+        margin-top: 20px;
+    }
+
+    .palace-copy {
+        margin-top: 0;
+    }
+
+    .palace-image img {
+        height: 270px;
+    }
+
+    .site-footer {
+        padding-top: 42px;
+    }
+
+    .footer-main {
+        display: block;
+    }
+
+    .footer-motto {
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin: 30px 0;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+}
