@@ -93,6 +93,51 @@
                         </div>
                     </div>
                 </article>
+
+                <article class="tour-card">
+                    <div class="tour-image image-welcome">
+                        <span class="tour-tag">Introduction</span>
+                    </div>
+                    <div class="tour-content">
+                        <p class="tour-duration">60 MINUTES · ENGLISH</p>
+                        <h3>Welcome to the Louvre</h3>
+                        <p>Begin your Louvre journey with a welcoming introduction to its history, highlights, and unforgettable masterpieces.</p>
+                        <div class="tour-meta">
+                            <span>From 14€</span>
+                            <a href="#availability">View times <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tour-card">
+                    <div class="tour-image image-egyptian">
+                        <span class="tour-tag">Ancient Egypt</span>
+                    </div>
+                    <div class="tour-content">
+                        <p class="tour-duration">90 MINUTES · ENGLISH</p>
+                        <h3>Louvre Egyptian Side</h3>
+                        <p>Explore ancient Egyptian treasures and uncover the stories, beliefs, and artistry preserved in the Louvre.</p>
+                        <div class="tour-meta">
+                            <span>From 20€</span>
+                            <a href="#availability">View times <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tour-card">
+                    <div class="tour-image image-art">
+                        <span class="tour-tag">Art &amp; Culture</span>
+                    </div>
+                    <div class="tour-content">
+                        <p class="tour-duration">90 MINUTES · ENGLISH</p>
+                        <h3>Art Tour</h3>
+                        <p>Discover the Louvre's artistic treasures and learn how remarkable works shaped the history of art.</p>
+                        <div class="tour-meta">
+                            <span>From 22€</span>
+                            <a href="#availability">View times <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 

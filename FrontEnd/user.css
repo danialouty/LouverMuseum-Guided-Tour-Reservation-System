@@ -104,6 +104,9 @@ h2 { margin-bottom: 0; color: var(--navy); font-size: 32px; }
 .image-interior { background-image: linear-gradient(rgba(13,34,53,.1), rgba(13,34,53,.2)), url("images/808x539_cmsv2_950880d4-2c99-5dcc-90eb-0977f3cc2c2e-9578563.avif"); }
 .image-collection { background-image: linear-gradient(rgba(13,34,53,.12), rgba(13,34,53,.2)), url("images/images.jpg"); }
 .image-palace { background-image: linear-gradient(rgba(13,34,53,.12), rgba(13,34,53,.2)), url("images/20240810100953494.jpg"); }
+.image-welcome { background-image: linear-gradient(rgba(13,34,53,.1), rgba(13,34,53,.2)), url("images/welcom.jpg"); }
+.image-egyptian { background-image: linear-gradient(rgba(13,34,53,.1), rgba(13,34,53,.2)), url("images/egyption.jpg"); }
+.image-art { background-image: linear-gradient(rgba(13,34,53,.1), rgba(13,34,53,.2)), url("images/art tour.jpg"); }
 .tour-tag { position: absolute; top: 14px; left: 14px; padding: 7px 10px; color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: var(--ivory); }
 .tour-content { padding: 23px; }
 .tour-duration { color: var(--muted); font-size: 9px; letter-spacing: 1px; }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover the Louvre's collections and reserve your guided museum experience.">
-    <title>Louvre Museum | Guided Tours</title>
+    <title>Louvre Museum</title>
     <link rel="stylesheet" href="landing.css?v=9">
 </head>
 <body>

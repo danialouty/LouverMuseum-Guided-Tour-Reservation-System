@@ -34,9 +34,11 @@ body {
     max-width: 460px;
     padding: 38px;
     overflow: hidden;
-    border: 1px solid var(--gold);
+    border: 10px solid rgba(218, 197, 164, .35);
     border-radius: 2px;
-    background: var(--paper);
+    background: #e9dfcf;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     box-shadow:
         0 18px 50px rgba(7, 22, 36, .38),
         inset 0 0 0 7px rgba(164, 122, 63, .16);
@@ -130,7 +132,7 @@ input {
     color: var(--ink);
     font: inherit;
     font-size: 14px;
-    background: rgba(246, 249, 250, .72);
+    background: rgba(246, 239, 225, .78);
     transition: border-color .2s ease, box-shadow .2s ease;
 }
 
