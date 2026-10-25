@@ -4,16 +4,17 @@ session_start();
 require_once '../../config.php';
 
 if (isset($_POST["submit"])) {
-//grabbing the data
-$password = $_POST["password"];
-$email = $_POST["email"];
-$role = $_POST["role"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
 
-$result =$conn->query("SELECT * FROM users WHERE email = '$email' AND role = '$role'");
+    $statement = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $statement->bind_param("s", $email);
+    $statement->execute();
+    $result = $statement->get_result();
+    $user = $result->fetch_assoc();
+    $statement->close();
 
-if ($result->num_rows > 0) {
- $user = $result->fetch_assoc();
- if(password_verify($password, $user["password"]) && ($user["is_active"] ?? 1)) {
+    if ($user && password_verify($password, $user["password"]) && ($user["is_active"] ?? 1)) {
     $_SESSION["username"] = $user["username"];
     $_SESSION["email"] = $user["email"];
     $_SESSION["role"] = $user["role"];
@@ -29,10 +30,10 @@ if ($result->num_rows > 0) {
 
 
     }
-    }
+
     $_SERVER['login_error'] = 'incorrect email or password';
     $_SERVER['active_from'] = 'login';
-    header("Location: signup.php");
+    header('Location: ../../FrontEnd/user_page.php');
 
 
     }
@@ -73,7 +74,7 @@ if ($result->num_rows > 0) {
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required placeholder="Enter your password">
             </div>
-
+<!-- 
             <div class="form-group">
                 <label for="role">Log in as</label>
                 <select id="role" name="role" required>
@@ -81,7 +82,7 @@ if ($result->num_rows > 0) {
                     <option value="user">Visitor</option>
                     <option value="admin">Administrator</option>
                 </select>
-            </div>
+            </div> -->
 
             <button type="submit" name="submit">Log In</button>
         </form>
