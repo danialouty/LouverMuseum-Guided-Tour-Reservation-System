@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     if ($user['role'] === 'admin') {
     header('Location: ../../FrontEnd/admin_page.php');
     } else {
-    header('Location: ../../FrontEnd/landingPage.php');
+    header('Location: ../../FrontEnd/user_page.php');
     }
 
     exit();

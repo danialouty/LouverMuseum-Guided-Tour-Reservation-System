@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     }
 
     // Redirect after successful registration
-    header("Location: signup.php");
+    header("Location: login.php");
     exit();
 }
 ?>
