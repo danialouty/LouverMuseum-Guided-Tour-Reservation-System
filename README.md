@@ -31,7 +31,6 @@ A PHP and MySQL web application for managing Louvre Museum guided-tour reservati
 - HTML5
 - CSS3
 - JavaScript
-- Chart.js
 
 ## Installation
 
